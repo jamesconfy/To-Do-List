@@ -15,7 +15,8 @@ cursor = mydb.cursor()
 
 #cursor.execute("CREATE DATABASE todo")
 
-#cursor.execute("drop database qpusers")
+#cursor.execute("drop database todo2")
+#cursor.execute("drop database todo1")
 
 #for db in cursor:
 #    print(db)

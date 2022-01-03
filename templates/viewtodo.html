@@ -16,7 +16,7 @@
             <tr>
                 <td>{{ dat.id }}</td>
                 <td>{{ dat.to_do }}</td>
-                <td>Date Created</td>
+                <td>{{ dat.date_created.strftime('%d / %m / %Y') }}</td>
             </tr>
             {% endfor %}
         </tbody>
