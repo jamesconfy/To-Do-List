@@ -1,0 +1,25 @@
+<!-- extends layout html page-->
+{% extends "layout.html" %}
+
+{% block content %}
+<div>
+    <table>
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>To Do</td>
+                <td>Date Created</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for dat in data %}
+            <tr>
+                <td>{{ dat.id }}</td>
+                <td>{{ dat.to_do }}</td>
+                <td>Date Created</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock content %}

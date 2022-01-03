@@ -1,0 +1,23 @@
+<!-- extends layout html page-->
+{% extends "layout.html" %}
+
+<!--block content from html page -->
+{% block content %}
+
+<!-- flashed message from website -->
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+{% for category, msg in messages %}
+<div class="alert alert-{{ category}}">
+    <p>{{msg}}</p>
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+<!-- div containing the template -->
+<div>
+    <h1>Hello</h1>
+    <p>This is a website to create to-do-list for you, help you organize the lsit and tell you want you have accomplished for that day</p>
+</div>
+{% endblock content %}
