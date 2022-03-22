@@ -1,0 +1,38 @@
+version: '3.9'
+
+services:
+  todolist:
+    container_name: todolist
+    image: todolist
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    networks:
+      - mysqlnet
+    ports:
+      - 5003:5003
+    volumes:
+      - ./:/app
+
+  mysqldb-todolist:
+    container_name: mysqldb-todolist
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ####
+      MYSQL_DATABASE: ####
+      MYSQL_USER: ####
+      MYSQL_PASSWORD: ####
+    ports:
+      - 3309:3306
+    networks:
+      - mysqlnet
+    volumes:
+      - mysql:/var/lib/mysql
+      - mysql_config:/etc/mysql
+
+volumes:
+  mysql:
+  mysql_config:
+
+networks:
+  mysqlnet:
